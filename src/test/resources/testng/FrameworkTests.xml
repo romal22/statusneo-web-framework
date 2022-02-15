@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="FrameworkTestSuite" parallel="methods" verbose="1" thread-count="10">
+    <listeners>
+<!--        <listener class-name="com.statusneo.listeners.AllureWebListener"/>-->
+    </listeners>
+    <test name="FrameworkTests">
+        <classes>
+<!--            <class name="com.statusneo.tests.core.FrameworkTests"/>-->
+        </classes>
+    </test>
+</suite>
