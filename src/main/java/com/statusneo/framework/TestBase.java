@@ -18,12 +18,12 @@ import java.lang.reflect.Method;
 @Log4j2
 public class TestBase {
 
-    protected ThreadLocal<BrowserInstance> browserInstance = new ThreadLocal<>();
     protected static final String DEFAULT_PROVIDER = "defaultConfig";
+    protected BrowserInstance app;
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethodTestBase(ITestContext iTestContext, Method method, Object[] params) {
-        getBrowserInstance().start("NA");
+        app = new BrowserInstance();
         log.info("beforeMethodTestBase() called");
     }
 
@@ -32,11 +32,10 @@ public class TestBase {
     public void afterMethodTestBase(ITestResult result) {
         log.info("afterMethodTestBase() called");
         getDriver().quit();
-       // log.info("Test log for " + getBrowserInstance().getTestName() + " is available at " + getBrowserInstance().getLogger().getLogFilePath());
     }
 
     private BrowserInstance getBrowserInstance() {
-        return browserInstance.get();
+        return app;
     }
 
     public WebDriver getDriver() {
