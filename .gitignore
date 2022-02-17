@@ -21,9 +21,6 @@ ${ctx:LOGFILENAME}
 *.tar.gz
 *.rar
 
-# virtual machine crash com.life360.logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-
 test-output
 out
 .idea
